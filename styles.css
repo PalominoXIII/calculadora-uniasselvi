@@ -1,0 +1,596 @@
+/* ===================== CONFIGURAÇÕES GERAIS ===================== */
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    height: 100%;
+    font-size: 15px;
+}
+
+/* ===================== CABEÇALHO ===================== */
+
+.cabecalho {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.cabecalho-lateral {
+    background-color: #1a1a1a;
+    width: 250px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #e5b208;
+    font-weight: bold;
+}
+
+.cabecalho-principal {
+    background-color: #1a1a1a;
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    color: white;
+    font-size: 18px;
+}
+
+.calculadora {
+    color: #e5b208;
+    margin-right: 5px;
+    font-weight: 900;
+    font-size: 24px;
+}
+
+.mona {
+    color: white;
+}
+
+.botoes-header {
+    display: flex;
+    gap: 10px;
+    margin-left: auto; /* ESSENCIAL para empurrar os botões para a direita */
+}
+
+.botoes-header button {
+    background-color: #444;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 6px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.botoes-header button:hover {
+    background-color: #666;
+}
+
+/* ===================== CONTAINER PRINCIPAL ===================== */
+
+.container {
+    display: flex;
+    height: calc(100vh - 50px);
+    margin-top: 50px;
+}
+
+/* ===================== MENU LATERAL ===================== */
+
+.menu-lateral {
+    background-color: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 10px;
+    height: 100%;
+    box-sizing: border-box;
+    z-index: 900;
+    width: 250px;
+    text-align: center;
+    font-size: 13px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #888 #1a1a1a;
+}
+
+/* ===================== CALCULADORA SIMPLES ===================== */
+
+.calculadora-simples {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+#campos-valores {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; 
+}
+
+.campo-valor {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.botoes-operacoes {
+    display: flex;
+    gap: 5px;
+    justify-content: space-between;
+}
+
+.botoes-operacoes button {
+    flex: 1;
+    padding: 8px;
+    font-weight: bold;
+    background-color: #e5b208;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.botoes-operacoes button.ativo {
+    background-color: #f1cc40;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.calculadora-simples button {
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.calculadora-simples button:hover {
+    background-color: #34495e;
+}
+
+.calculadora-simples p {
+    margin: 0;
+    font-weight: bold;
+    color: #e5b208;
+}
+
+.botoes-extra {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.botoes-extra button {
+    padding: 6px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    background-color: #bdc3c7;
+    color: #2c3e50;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.botoes-extra button:hover {
+    background-color: #d7dfe3;
+}
+
+/* ===================== BOTÕES CALCULADORAS ===================== */
+
+.botoes-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.botoes-menu button {
+    background-color: #444;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.botoes-menu button:hover {
+    background-color: #666;
+}
+
+/* ===================== ÁREA PRINCIPAL ===================== */
+
+.div-principal {
+    flex: 1;
+    display: flex;
+    align-items: center;        /* Centraliza horizontalmente */
+    justify-content: center;    /* Centraliza verticalmente */
+    padding: 10px;
+    box-sizing: border-box;
+    height: 100%;
+    background-color: #262626;
+    border-left: 1px solid #333;
+}
+
+.boas-vindas {
+    margin: auto;
+    font-size: 18px;
+    text-align: center;
+    color: #f1cc40;
+    opacity: 0;
+    transform: scale(0.95);
+    animation: puff 0.6s ease-out forwards;
+}
+
+@keyframes puff {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ===================== CALCULADORA DE DESCONTO ===================== */
+
+.calculadora-desconto {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 600px; /* Largura fixa */
+    height: 550px; /* Altura fixa */
+    padding: 20px;
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #00000033;
+    color: white;
+    box-sizing: border-box;
+    overflow: hidden; /* Impede crescimento */
+}
+
+.titulo-calculadora-desconto {
+    color: #e5b208;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.calculadora-desconto label {
+    font-weight: bold;
+    color: #ccc;
+}
+
+.calculadora-desconto input {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #555;
+    background-color: #2c2c2c;
+    color: white;
+}
+
+.botao-calcular {
+    background-color: #e5b208;
+    color: black;
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.botao-calcular:hover {
+    background-color: #f1cc40;
+}
+
+.resultado-desconto {
+    font-weight: bold;
+    margin-top: 10px;
+    height: 150px; /* Altura fixa */
+    overflow-y: auto;
+    white-space: pre-line;
+    transition: all 0.3s ease;
+}
+
+.botao-copiar-resultado {
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.botao-copiar-resultado:hover {
+    background-color: #34495e;
+}
+
+/* ===================== CALCULADORA DE MULTA ===================== */
+
+.calculadora-multa {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 25px;
+    align-items: stretch;
+    background-color: #1c1c1c;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.titulo-calculadora-multa {
+    color: #e5b208;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.calculadora-multa label {
+    font-weight: bold;
+    color: #ccc;
+}
+
+.calculadora-multa input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #555;
+    background-color: #2c2c2c;
+    color: white;
+    font-size: 16px;
+}
+
+.resultado-multa {
+    font-weight: bold;
+    margin-top: 10px;
+    height: 150px; /* Mantém o tamanho fixo como no desconto */
+    overflow-y: auto;
+    white-space: pre-line;
+    transition: all 0.3s ease;
+    color: #fff;
+    background-color: #1f1f1f;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #333;
+}
+
+.botao-calcular-multa {
+    background-color: #e5b208;
+    color: black;
+    font-weight: bold;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-size: 16px;
+}
+
+.botao-calcular-multa:hover {
+    background-color: #f1cc40;
+}
+
+.botao-copiar-multa {
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.botao-copiar-multa:hover {
+    background-color: #34495e;
+}
+
+/* ===================== CALCULADORA DE DESPLUG PARCIAL ===================== */
+
+.calculadora-desplug {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    width: 100%;
+    max-width: 900px;
+    height: 550px;
+    padding: 20px;
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #00000033;
+    color: white;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin: 0 auto;
+    font-size: 13px;
+    text-align: center;
+}
+
+.desplug-esquerda {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 8px;
+    justify-content: space-between;
+    max-height: 100%;
+    overflow-y: auto;
+    padding-right: 8px; /* Evita corte na rolagem */
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: #888 #1f1f1f; /* Firefox */
+}
+
+
+.desplug-direita {
+    flex: 1;
+    background-color: #1f1f1f;
+    padding: 8px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.titulo-calculadora-desplug {
+    color: #e5b208;
+    text-align: center;
+    font-size: 16px;
+    margin: 0;
+}
+
+.mensagem-pontualidade {
+    font-style: italic;
+    color: #f1cc40;
+    font-size: 12px;
+    margin: -5px 0 3px;
+}
+
+.calculadora-desplug label {
+    font-weight: bold;
+    color: #ccc;
+    font-size: 12px;
+    margin-bottom: 2px;
+}
+
+.calculadora-desplug input {
+    padding: 6px;
+    border-radius: 4px;
+    border: 1px solid #555;
+    background-color: #2c2c2c;
+    color: white;
+    font-size: 13px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.container-disciplinas {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* NOVO BLOCO: container dos botões de adicionar/remover */
+.botoes-adicionar-remover {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+/* Ambos os botões com mesmo estilo base */
+.botao-adicionar-disciplina,
+.botao-remover-disciplina {
+    flex: 1;
+    background-color: #bdc3c7;
+    color: #1f1f1f;
+    font-weight: bold;
+    padding: 6px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: 0.2s ease;
+}
+
+.botao-adicionar-disciplina:hover,
+.botao-remover-disciplina:hover {
+    background-color: #d7dfe3;
+}
+
+.grupo-radio {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 0;
+    justify-content: space-between;
+}
+
+.grupo-radio label {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background-color: #2c2c2c;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: normal;
+    color: #fff;
+    font-size: 12px;
+}
+
+.grupo-radio input[type="radio"] {
+    accent-color: #e5b208;
+}
+
+.botao-calcular-desplug {
+    background-color: #e5b208;
+    color: black;
+    font-weight: bold;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+    width: 100%;
+}
+
+.botao-calcular-desplug:hover {
+    background-color: #f1cc40;
+}
+
+.resultado-desplug {
+    flex: 1;
+    font-size: 13px;
+    font-weight: bold;
+    background-color: #1f1f1f;
+    color: #fff;
+    padding: 8px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    white-space: pre-line;
+    overflow: hidden;
+
+    /* Alinhamento centralizado + texto justificado */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.botao-copiar-desplug {
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 13px;
+    transition: 0.2s ease;
+    width: 100%;
+}
+
+.botao-copiar-desplug:hover {
+    background-color: #34495e;
+}
+

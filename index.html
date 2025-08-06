@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Mona - Calculadora Uniasselvi</title>
+    <!-- Linkagem CSS-->
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <!-- Ícones FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- Início do cabeçalho -->
+    <header class="cabecalho">
+        <div class="cabecalho-lateral">
+            <i class="fa-solid fa-tractor"></i>
+            <h3>Prologue</h3>
+        </div>
+        <div class="cabecalho-principal">
+            <span class="calculadora">CALCULADORA: </span>
+            <span class="mona">mona</span>
+            <div class="botoes-header">
+                <button id="botaoDesconto">📉 Desconto</button>
+                <button id="botaoDesplug">🔌 Desplug Parcial</button>
+                <button id="botaoMulta">💸 Multa</button>
+            </div>
+        </div>
+    </header>
+    <div class="container"> <!-- Início Container principal para controle do CSS -->
+        <div class="menu-lateral"> <!-- Início menu lateral -->
+            <h3 class="titulo-calculadora">Calculadora Simples</h3>
+            <div class="calculadora-simples">
+                <div id="campos-valores">
+                    <input type="number" class="campo-valor" placeholder="Valor 1">
+                    <input type="number" class="campo-valor" placeholder="Valor 2">
+                </div>
+
+                <button onclick="adicionarCampo()">➕ Adicionar campo</button>
+                <button onclick="removerCampo()">➖ Remover campo</button>
+
+                <div class="botoes-operacoes">
+                    <button onclick="selecionarOperacao('+')">+</button>
+                    <button onclick="selecionarOperacao('-')">−</button>
+                    <button onclick="selecionarOperacao('*')">×</button>
+                    <button onclick="selecionarOperacao('/')">÷</button>
+                </div>
+
+                <button onclick="calcular()">Calcular!</button>
+
+                <div class="botoes-extra">
+                    <button onclick="limparCampos()">🧹 Limpar tudo</button>
+                    <button onclick="resetarCalculadora()">♻️ Resetar calculadora</button>
+                </div>
+
+                <p>Resultado: <span id="resultadoSimples">0</span></p>
+                <button class="botao-copiar" type="button" onclick="copiarResultadoSimples()">Copiar</button>
+                <div class="botoes-menu">
+                    <button id="botaoDescontoMenu">📉 Desconto</button>
+                    <button id="botaoDesplugMenu">💸 Desplug Parcial</button>
+                    <button id="botaoMultaMenu">💸 Multa</button>
+                </div>
+
+            </div>
+        </div> <!-- Fim menu lateral -->
+        <div class="div-principal"> <!-- Início da div principal -->
+
+        </div> <!-- Fim da div principal -->
+    </div> <!-- Fim Container principal para controle do CSS -->
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/calculadora-simples.js"></script>
+    <script src="../scripts/calculadora-desconto.js"></script>
+    <script src="../scripts/multa.js"></script>
+    <script src="../scripts/calculadora-desplug-parcial.js"></script>
+</body>
+
+</html>
