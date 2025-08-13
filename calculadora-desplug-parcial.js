@@ -49,11 +49,11 @@ function calcularDesplugParcial() {
         return;
     }
 
-    // Cálculo principal
-    let valorParcial = somaDisciplinas - valorPago;
-    let valorComBolsa = valorParcial * (1 - bolsa / 100);
-    let valorComPontualidade = valorComBolsa * 0.9;
-    let valorMensal = valorComPontualidade / mensalidadesRestantes;
+    // Cálculo principal (ordem correta: descontos -> valor pago -> dividir)
+    let valorAposDescontos = somaDisciplinas * (1 - bolsa / 100) * 0.9; // 10% de pontualidade
+    let valorRestante = valorAposDescontos - valorPago;
+    let valorMensal = valorRestante / mensalidadesRestantes;
+
 
     if (valorMensal < 0) {
         resultado.style.color = "red";
@@ -110,3 +110,4 @@ function removerDisciplina() {
         alert("Você deve manter pelo menos duas disciplinas.");
     }
 }
+
