@@ -54,7 +54,6 @@ function calcularDesplugParcial() {
     let valorRestante = valorAposDescontos - valorPago;
     let valorMensal = valorRestante / mensalidadesRestantes;
 
-
     if (valorMensal < 0) {
         resultado.style.color = "red";
         typeWriter(resultado, "⚠️ O valor final ficou negativo. Verifique os dados informados.", 30);
@@ -110,4 +109,3 @@ function removerDisciplina() {
         alert("Você deve manter pelo menos duas disciplinas.");
     }
 }
-
