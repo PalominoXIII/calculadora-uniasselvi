@@ -89,7 +89,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 <label><input type="radio" name="mensalidadesRestantes" value="2"> 2</label>
                 <label><input type="radio" name="mensalidadesRestantes" value="3"> 3</label>
                 <label><input type="radio" name="mensalidadesRestantes" value="4"> 4</label>
-                <label><input type="radio" name="mensalidadesRestantes" value="5" checked> 5</label>
+                <label><input type="radio" name="mensalidadesRestantes" value="5"> 5</label>
+                <label><input type="radio" name="mensalidadesRestantes" value="6" checked> 6</label> <!-- GPT: adicionado 6 mensalidades e definido como padrão (checked) -->
             </div>
 
             <label for="bolsa">Informe o valor da bolsa do aluno sem a pontualidade (%):</label>
