@@ -34,7 +34,7 @@ function calcularDesplugParcial() {
     const valorPago = parseFloat(document.getElementById("valorPago").value);
     const bolsa = parseFloat(document.getElementById("bolsa").value);
     const radioSelecionado = document.querySelector('input[name="mensalidadesRestantes"]:checked');
-    const mensalidadesRestantes = radioSelecionado ? parseInt(radioSelecionado.value) : 5;
+    const mensalidadesRestantes = radioSelecionado ? parseInt(radioSelecionado.value) : 6; // GPT: alterado fallback padrão de 5 para 6
 
     // Validações
     if (
